@@ -1,0 +1,27 @@
+server:
+  port: 8083 # Port on which the Request Service will run
+
+spring:
+  application:
+    name: request-service # Service name used when registering with Eureka
+
+  datasource:
+    url: jdbc:h2:mem:requestdb #URL of the H2 in-memory database
+    driver-class-name: org.h2.Driver #Database driver class name
+    username: ibtisam #Username for the database
+    password: 1111 #Password for the database
+
+  h2:
+    console:
+      enabled: true #Enable the H2 graphical console for viewing data
+      path: /h2-console #Path to access the H2 database console
+
+  jpa:
+    hibernate:
+      ddl-auto: update #Automatically updates DB schema on application startup
+    show-sql: true #Show SQL queries in the console
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka #URL of Eureka Discovery Server

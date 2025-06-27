@@ -1,0 +1,13 @@
+server:
+  port: 8888 # Specifies that the server will run on port 8888
+
+spring:
+  application:
+    name: config-server # Sets the application's name, useful for service discovery
+  profiles:
+    active: native #Activates the native profile, which means config files will be fetched from the local file system or classpath instead of Git
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/config # efines the location where the config server will search for configuration files

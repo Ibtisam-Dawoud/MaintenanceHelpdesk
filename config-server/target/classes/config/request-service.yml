@@ -1,0 +1,3 @@
+server:
+  port: 8081
+message: Welcome from Config Server to Resquest Service
